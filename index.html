@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>test_bevy</title>
+    <style>
+      * { margin: 0; padding: 0; }
+      body { background: #000; display: flex; justify-content: center; align-items: center; height: 100vh; }
+      canvas { display: block; }
+    </style>
+  <link rel="modulepreload" href="/WanGameEditor/Editor-b9cb802f43315003.js" crossorigin="anonymous" integrity="sha384-oIQIvdAEGiZlYHKte55LO+esnD332IMo41jb5Myv1XIMRBPRgBJLaPrEREDoCpJs"><link rel="preload" href="/WanGameEditor/Editor-b9cb802f43315003_bg.wasm" crossorigin="anonymous" integrity="sha384-rC/+ekVzVoLsFlfI6J9FVw9OULkRSAYKBrzsZzSyO54rqoIAyddWup8YYupqqQKp" as="fetch" type="application/wasm"></head>
+  <body>
+    
+<script type="module">
+import init, * as bindings from '/WanGameEditor/Editor-b9cb802f43315003.js';
+const wasm = await init({ module_or_path: '/WanGameEditor/Editor-b9cb802f43315003_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+  </body>
+</html>
